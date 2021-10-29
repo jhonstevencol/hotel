@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Hotel courtyard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {%block classhome%}{% endblock %}" href="/">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    {% if session['username']%}
+                        <li class="nav-item">
+                            <a class="nav-link {%block classrooms%}{% endblock %}" href="/rooms">Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {%block classreserves%}{% endblock %}" href="/reserves">Reserves</a>
+                        </li>
+                    {%endif%}
+                </ul>
+                <div class="d-flex">
+                    {% if session['username'] %}
+                        <ul class="navbar-nav me-auto">
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{session['username']}}</a>
+                                <div class="dropdown-menu">
+                                    {% if session['role'] == 1 %}
+                                        <a class="dropdown-item" href="/admin">Administrar</a>
+                                    {% endif %}
+                                    <a class="dropdown-item" href="/logout">Cerrar sesion</a>
+                                </div>
+                            </li>
+                        </ul>                        
+                    {% else %}
+                        <a class="btn btn-secondary my-2 my-sm-0 mx-1" href="#rooms">Reserva</a>
+                        <a class="btn btn-secondary my-2 my-sm-0 mx-1" href="#about">Sobre</a>
+                        <a class="btn btn-secondary my-2 my-sm-0 mx-1" href="/servicios">Servicios</a>
+                        <a class="btn btn-secondary my-2 my-sm-0 mx-1" href="/acerca">Acerca</a>
+                        <a class="btn btn-secondary my-2 my-sm-0 mx-1" href="/contacto">Contacto</a>
+                    
+                        <a class="btn btn-secondary my-2 my-sm-0 mx-1" href="/login">Iniciar sesion</a>
+                        <a class="btn btn-primary my-2 my-sm-0" href="/register">Registrarse</a>
+                    {% endif %}
+                </div>
+                <!-- <form class="d-flex">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>  
+    
+    <div class="container">       
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+</html>

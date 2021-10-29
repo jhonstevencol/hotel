@@ -1,0 +1,23 @@
+{% extends './layoutadmin.html' %}
+{% block title %}Edit room{% endblock %}
+{% block collapse %}show{% endblock %}
+{% block body %}
+    <div class="col-6">
+        <input type="hidden" value="1" id="hotel">
+        <h2>Edit room</h2>   
+        <label for="" class="form-label">Rooms number</label>
+        <select class="form-select" id="room_id">
+            <option value="">-----</option>
+            {% for room in rooms %}
+                <option value="{{room.id}}">{{room.numero}}</option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-primary my-2" onclick="buscarHabitacion()">Show info room</button>
+        <hr>
+    </div>
+    <div class="col-6" id="respuesta"></div>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+    
+{% endblock %}
