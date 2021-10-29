@@ -1,0 +1,174 @@
+{% extends './layout.html' %}
+{% block title %}Inicio{% endblock %}
+{% block classhome %}active{% endblock %}
+
+{% block body %}
+    <div class="row mt-3">
+        <div class="d-flex">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/static/images/acordion/acodrion1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/acordion/acordion2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/acordion/acodrion3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>        
+        <div class="col-md-6 my-3">
+            <p class="text-justify"><strong>The courtyard hotel</strong> is located in miami beach florida, it has pleasant spaces for the whole family. Founded in 2020, it was born to please the whole family, it has a very familiar atmosphere. The hotel is located in the famous area of ​​Miami Beach, here you can meet your favorite characters from the big screen, from your favorite sports. </p>
+        </div>
+        <div class="col-md-6 my-3">
+            <p class="text-justify">
+                It has 4 swimming pools for adults and 2 swimming pools for children, green areas, amusement park, Wi-Fi in all hotel facilities, rooms with sea view. Visit us to have the pleasure of serving you. 
+            </p>
+        </div>
+    </div>  
+    
+    <!-- Header -->
+<header class="w3-display-container w3-content w3-wide " style="max-width:1600px;min-width:500px" id="home">
+    <div class="w3-container w3-margin-top" >
+  
+    <!-- <img class="w3-image" src="images/The_Manhattan_Principal.jpg" alt="Foto del hotel Manhattan" width="1600" height="800"> -->
+    <video width="100%" height="100%" src="../static/videos/Video_Hotel1.mp4" autoplay muted loop></video>
+    
+    <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+      <h1 class="w3-xxlarge w3-blue w3-hover-pale-red" >El lugar perfecto para despertar</h1>
+    </div>
+  </div>
+  </header>
+
+  <!-- End Header -->
+
+  <!-- Page content -->
+<div class="w3-content" style="max-width:1600px; " id="rooms">
+  
+
+    <div class="w3-container w3-margin-top">
+      
+      <h3 class="w3-green w3-hover-orange" >Habitaciones</h3>
+      <p>Siéntete como en casa es nuestro lema. Ofrecemos las mejores camas de la industria. Duerme bien y descansa bien.</p>
+    </div>
+    
+    <div class="w3-row-padding" >
+      <div class="w3-col m3">
+        <label><i class="fa fa-calendar-o"></i> Fecha de ingreso</label>
+        <input class="w3-input w3-border" type="date" placeholder="DD MM YYYY">
+      </div>
+      <div class="w3-col m3">
+        <label><i class="fa fa-calendar-o"></i> Fecha de salida</label>
+        <input class="w3-input w3-border" type="date" placeholder="DD MM YYYY">
+      </div>
+      <div class="w3-col m2">
+        <label><i class="fa fa-male"></i> Adultos</label>
+        <input class="w3-input w3-border" type="number" min="0" placeholder="1">
+      </div>
+      <div class="w3-col m2">
+        <label><i class="fa fa-child"></i> Niños</label>
+        <input class="w3-input w3-border" type="number" min="0" placeholder="0">
+      </div>
+      <div class="w3-col m2">
+        <label><i class="fa fa-search"></i> Buscar</label>
+        <button class="w3-button w3-block w3-black">Buscar</button>
+      </div>
+    </div>
+  
+    <div class="w3-row-padding w3-padding-16" >
+      <div class="w3-third w3-margin-bottom">
+        <img src="../static/images/habitacionking.png" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Habitacion King</h3>
+          <h6 class="w3-opacity">Desde $80.000 pesos colombianos.</h6>
+          <p>Las habitaciones King del Hotel Courtyard suman un total de 30 m² de superficie y perfectas para 2 huéspedes. Modernas, equipadas y con detalles orientados al máximo confort, todas estas habitaciones cuentan con cama King, cajilla de seguridad eléctrica, TV LCD, mesa.</p>
+          <p>30m<sup>2</sup></p>
+          <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
+          <button class="w3-button w3-block w3-green w3-hover-orange w3-margin-bottom">Consigue esta habitacion.</button>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <img src="../static/images/juniorsuite.png" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Junior Suite</h3>
+          <h6 class="w3-opacity">Desde $100.000 pesos colombianos.</h6>
+          <p>Las Junior Suite del Courtyard  representan un plus de alojamiento en el norte de Bogotá, cómodo, versátil y lleno de estilo contemporáneo. Reserve una de las Business Suite  que le ofrece nuestro hotel y tendrá a su disposición 52 m.</p>
+          <p>52m<sup>2</sup></p>
+          <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>
+          <button class="w3-button w3-block w3-green w3-hover-orange w3-margin-bottom">Consigue esta habitacion.</button>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <img src="../static/images/suitepresidencial.png" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Suite Presidencial</h3>
+          <h6 class="w3-opacity">Desde $120.000 pesos colombianos.</h6>
+          <p>La Suite Presidencial del Courtyard Hotel es el alojamiento más exclusivo  de nuestro hotel con 59 m², disponen de terraza propia y Jacuzzi. Disfrute de una habitación de auténtico lujo en el mejor sector, con todo tipo de servicios: cama King en el dormitorio.</p>
+          <p>59m<sup>2</sup></p>
+          <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+          <button class="w3-button w3-block w3-green w3-hover-orange w3-margin-bottom">Consigue esta habitacion.</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- End Page content -->
+
+<!-- About contect-->
+
+<div class="w3-content" style="max-width:1600px; " id="rooms">
+
+ <div class="w3-row-padding" id="about">
+  <div class="w3-col l4 12">
+    <h3 class="w3-text-deep-orange">Sobre nosotros</h3>
+    <h6>Sé feliz en uno de los mejores Courtyard/Residence en New York Manhattan/Central Park, Central Park es un parque urbano público situado en el distrito metropolitano de Manhattan, en la ciudad de Nueva York, Estados Unidos. Somos un hotel 5 estrellas. Tenemos todo para que encuentres más opciones en tu visita de placer en pareja o familia, o en tu viaje de negocios o congresos, Manhattan.
+
+      Disfruta de la magia del Caribe colombiano, en el hotel que te ofrece más que todos los hoteles en Cartagena. Dos opciones de alojamiento en una torre moderna o instalaciones de estilo caribeño. Y más playas, más piscinas, bares, restaurantes, amplios salones y jardines, centro de negocios, gimnasio, spa, cancha de tenis, mini golf, salas de juego y más, mucho más, de las mejores vistas de la ciudad.</h6>
+  <p class="w3-text-green">Nosotros aceptamos: <i class="fa fa-credit-card w3-large"></i> <i class="fa fa-cc-mastercard w3-large"></i> <i class="fa fa-cc-amex w3-large"></i> <i class="fa fa-cc-cc-visa w3-large"></i><i class="fa fa-cc-paypal w3-large"></i></p>
+  </div>
+  <div class="w3-col l8 12">
+    <img src="../static/images/manhattan.jpg" class="w3-image w3-greyscale" style="width:100%;">
+  </div>
+</div>
+
+</div>
+<!-- End About contect -->
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+    <h5>Encuentranos en:</h5>
+    <div class="w3-xlarge w3-padding-16">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.courtyard.com" target="_blank" class="w3-hover-text-green">www.courtyard.com</a></p>
+  </footer>
+
+<!-- End Footer -->
+{% endblock %}
+
+
+

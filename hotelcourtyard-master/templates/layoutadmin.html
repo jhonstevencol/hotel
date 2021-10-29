@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link align-middle px-0 text-white">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#rooms" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Options rooms</span> </a>
+                            <ul class="collapse {%block collapse%}{%endblock%} nav flex-column ms-1" id="rooms" data-bs-parent="#menu">
+                                <li class="nav item">
+                                    <a href="/admin" class="nav-link text-white"> <span class="d-none d-sm-inline">Create room</span></a>
+                                </li>
+                                <li>
+                                    <a href="/edit-room" class="nav-link text-white"> <span class="d-none d-sm-inline">Edit room</span></a>
+                                </li>
+                                <li>
+                                    <a href="/delete-rooms" class="nav-link text-white"> <span class="d-none d-sm-inline">Delete room</span></a>
+                                </li>
+                                <li>
+                                    <a href="/rate-room" class="nav-link text-white"> <span class="d-none d-sm-inline">Rate room</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/dashboard" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span></a>
+                        </li>                        
+                        <li>
+                            <a href="/customers" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col py-3">                
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
